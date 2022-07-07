@@ -286,9 +286,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 869147450}
-  - component: {fileID: 869147451}
-  - component: {fileID: 869147452}
   - component: {fileID: 869147453}
+  - component: {fileID: 869147454}
   m_Layer: 0
   m_Name: OfficialSolution
   m_TagString: Untagged
@@ -311,7 +310,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &869147451
+--- !u!114 &869147453
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -320,7 +319,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 869147449}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e78da13d0e1140ebb69390d8321b601, type: 3}
+  m_Script: {fileID: 11500000, guid: cab167710583841aea0b7768a84b2a1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _configAsset: {fileID: 4900000, guid: 6361efbeb64424859b2876afe69c7255, type: 3}
@@ -328,24 +327,7 @@ MonoBehaviour:
   _width: 1280
   _height: 720
   _fps: 30
---- !u!114 &869147452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 869147449}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11cab0c0a7dc14e54857c1d319d0289a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _configAsset: {fileID: 4900000, guid: 791f9171a6a50a8e79bb6a40d1020232, type: 3}
-  _screen: {fileID: 560904347}
-  _width: 1280
-  _height: 720
-  _fps: 30
---- !u!114 &869147453
+--- !u!114 &869147454
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -354,10 +336,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 869147449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cab167710583841aea0b7768a84b2a1f, type: 3}
+  m_Script: {fileID: 11500000, guid: cb8c740386a154d31abedce389d32cbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _configAsset: {fileID: 4900000, guid: 6361efbeb64424859b2876afe69c7255, type: 3}
+  _configAsset: {fileID: 4900000, guid: 1bb0bc519f061454ba58b69d56868e0b, type: 3}
   _screen: {fileID: 560904347}
   _width: 1280
   _height: 720
