@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402248, g: 0.49316555, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -152,6 +152,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 884590458}
   m_RootOrder: 0
@@ -271,6 +272,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -285,6 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 869147450}
   - component: {fileID: 869147451}
+  - component: {fileID: 869147452}
   m_Layer: 0
   m_Name: OfficialSolution
   m_TagString: Untagged
@@ -302,6 +305,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -315,12 +319,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 869147449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 043ccd99cf82b3cc9bf2e00956ce2b93, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e78da13d0e1140ebb69390d8321b601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _configAsset: {fileID: 4900000, guid: b2e6ab371f769743fbeef93146a1277b, type: 3}
   _screen: {fileID: 560904347}
-  _width: 640
-  _height: 480
+  _width: 1280
+  _height: 720
+  _fps: 30
+--- !u!114 &869147452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869147449}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11cab0c0a7dc14e54857c1d319d0289a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _configAsset: {fileID: 4900000, guid: 791f9171a6a50a8e79bb6a40d1020232, type: 3}
+  _screen: {fileID: 560904347}
+  _width: 1280
+  _height: 720
   _fps: 30
 --- !u!1 &884590454
 GameObject:
@@ -412,6 +434,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 560904345}
   m_Father: {fileID: 0}
@@ -501,6 +524,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -594,6 +618,7 @@ Transform:
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
