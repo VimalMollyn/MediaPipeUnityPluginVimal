@@ -25,6 +25,8 @@ namespace Mediapipe.Unity
     private Texture2D _outputTexture;
     private Color32[] _outputPixelData;
 
+    public GameObject noseSphere;
+
     private IEnumerator Start()
     {
       if (WebCamTexture.devices.Length == 0)
@@ -44,7 +46,8 @@ namespace Mediapipe.Unity
       _outputTexture = new Texture2D(_width, _height, TextureFormat.RGBA32, false);
       _outputPixelData = new Color32[_width * _height];
 
-      _screen.texture = _outputTexture;
+      // _screen.texture = _outputTexture;
+      _screen.texture = _webCamTexture;
 
       AssetLoader.Provide(new StreamingAssetsResourceManager());
       yield return AssetLoader.PrepareAssetAsync("pose_landmark_lite.bytes", "pose_landmark_lite.bytes", false); 
@@ -56,9 +59,9 @@ namespace Mediapipe.Unity
 
 
       var outputVideoStream = new OutputStream<ImageFramePacket, ImageFrame>(_graph, "segmentation_mask");
-      // var multiFaceLandmarksStream = new OutputStream<NormalizedLandmarkListVectorPacket, List<NormalizedLandmarkList>>(_graph, "");
+      var poseLandmarkStream = new OutputStream<NormalizedLandmarkListPacket, NormalizedLandmarkList>(_graph, "pose_landmarks");
       outputVideoStream.StartPolling().AssertOk();
-      // multiFaceLandmarksStream.StartPolling().AssertOk();
+      poseLandmarkStream.StartPolling().AssertOk();
       stopwatch.Start();
 
       _graph.StartRun().AssertOk();
@@ -74,27 +77,27 @@ namespace Mediapipe.Unity
 
         yield return new WaitForEndOfFrame();
 
-        if (outputVideoStream.TryGetNext(out var outputVideo))
-        {
-          if (outputVideo.TryReadPixelData(_outputPixelData))
-          {
-            _outputTexture.SetPixels32(_outputPixelData);
-            _outputTexture.Apply();
-          }
-        }
-
-        // if (multiFaceLandmarksStream.TryGetNext(out var multiFaceLandmarks))
+        // if (outputVideoStream.TryGetNext(out var outputVideo))
         // {
-        //   if (multiFaceLandmarks != null && multiFaceLandmarks.Count > 0)
+        //   if (outputVideo.TryReadPixelData(_outputPixelData))
         //   {
-        //     foreach (var landmarks in multiFaceLandmarks)
-        //     {
-        //       // top of the head
-        //       var topOfHead = landmarks.Landmark[10];
-        //       Debug.Log($"Unity Local Coordinates: {screenRect.GetPoint(topOfHead)}, Image Coordinates: {topOfHead}");
-        //     }
+        //     _outputTexture.SetPixels32(_outputPixelData);
+        //     _outputTexture.Apply();
         //   }
         // }
+
+        if (poseLandmarkStream.TryGetNext(out var poseLandmarks))
+        {
+          if (poseLandmarks != null)
+          {
+            // top of the head
+            var nose = poseLandmarks.Landmark[0];
+            var screenPoint = screenRect.GetPoint(nose);
+            var scale = 0.1545784f; // TODO: Not sure how to get this number programmatically
+            noseSphere.transform.position = new Vector3(-screenPoint.x * scale, screenPoint.y * scale, 90f);
+            // Debug.Log($"Unity Local Coordinates: {screenRect.GetPoint(nose)}, Image Coordinates: {nose}");
+          }
+        }
       }
     }
 

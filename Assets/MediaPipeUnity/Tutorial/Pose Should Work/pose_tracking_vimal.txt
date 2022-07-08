@@ -22,6 +22,7 @@
 
 input_stream: "input_video"
 
+output_stream: "output_video"
 output_stream: "pose_landmarks"
 output_stream: "pose_world_landmarks"
 output_stream: "segmentation_mask"
@@ -72,8 +73,8 @@ node {
       packet { bool_value: true }
       packet { bool_value: true }
       packet { int_value: 0 }
-      packet { bool_value: true }
-      packet { bool_value: true }
+      packet { bool_value: false }
+      packet { bool_value: false }
     }
   }
 }
